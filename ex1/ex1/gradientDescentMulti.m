@@ -19,7 +19,7 @@ for iter = 1:num_iters
 
 
     predications = X * theta;
-    delta = alpha * (1/m) * ((predications - y)' * X)';
+    delta = alpha / m * (X' * (predications - y));
     theta = theta - delta;
 
 
