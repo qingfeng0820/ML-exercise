@@ -40,7 +40,7 @@ grad = zeros(size(theta));
 
 h = sigmoid(X * theta);
 thetaReg = [0; theta(2:size(theta))];
-J = (1 / m) * (-y' * log(h) - (1 - y)' * log(1 - h)) + lambda / (2 * m) * (thetaReg' * thetaReg);
+J = (-1 / m) * (y' * log(h) + (1 - y)' * log(1 - h)) + lambda / (2 * m) * (thetaReg' * thetaReg);
 grad = (1 / m) * (X' * (h - y)) + lambda / m * thetaReg;
 
 
